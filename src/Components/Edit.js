@@ -27,6 +27,7 @@ class Edit extends Component {
     render(){
         return (
             <div>
+                <img className="player-pict" src={this.props.player.img}/>
                 {this.state.isEditing
                 ?(
                     <div>

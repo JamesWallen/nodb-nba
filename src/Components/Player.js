@@ -8,6 +8,7 @@ class Player extends Component {
         const {player} = this.props;
         let newPlayer = {
             name: player.name,
+            img: player.img,
         }
 
         this.props.pickFn(newPlayer);
@@ -17,6 +18,7 @@ class Player extends Component {
     render(){
         return (
             <div onClick={this.handlePick}>
+                <img src={this.props.player.img}/>
                 <p>{this.props.player.name}</p>
             </div>
         )
