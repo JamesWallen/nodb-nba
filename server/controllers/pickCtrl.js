@@ -7,11 +7,15 @@ module.exports = {
     },
 
     postPlayer: (req, res) => {
-        const{player} = req.body;
-        player.id = id;
+        const{name} = req.body;
+        console.log(name)
+        const newPlayer = {
+            name: name,
+            id: id,
+        }
         id++;
 
-        pickPlayer.push(player);
+        pickPlayer.push(newPlayer);
         res.status(200).send(pickPlayer);
     },
 
@@ -30,6 +34,6 @@ module.exports = {
         const {id} = req.params;
         const index = pickPlayer.findIndex(pickPlayer => pickPlayer.id === +id);
         pickPlayer.splice(index, 1);
-        res.status(200).send(choiceDest);
+        res.status(200).send(pickPlayer);
     }
 }

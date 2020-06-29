@@ -4,6 +4,13 @@
 
 .player-flex {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.backboard {
+  margin-top: 75px;
+  margin-left: 42%;
+  height: 200px;
+  width: 200px;
 }

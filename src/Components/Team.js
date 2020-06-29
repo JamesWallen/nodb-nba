@@ -4,17 +4,21 @@ import React from 'react';
 import Edit  from './Edit';
 
 const Team = props => {
-    const mappedPlayers = props.players.map((players, i) => (
+    const mappedPlayers = props.pickPlayer.map((player, i) => (
         <Edit
             key={i}
-            players={players}
-            nameFn={props.nameFN}
-            releaseFn={props.releaseFn}/>
+            player={player}
+            nameFn={props.nameFn}
+            releaseFn={props.releaseFn}
+            deleteFn={props.deleteFn}/>
     ))
 
     return (
         <div>
-            <h1>All-Stat Team</h1>
+            <div>
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQsQl4yimtTi6OrCwdmbp5FO25y-6Lp7M7kiQ&usqp=CAU'/>
+            </div>
+            <h1>Your Team!!!</h1>
             <div className='player-flex'>
                 {mappedPlayers}
             </div>

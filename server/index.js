@@ -18,7 +18,7 @@ app.get('/api/players', playerCtrl.getPlayer)
 app.get('/api/pick', pickCtrl.getPick);
 app.post('/api/pick', pickCtrl.postPlayer);
 app.put('/api/pick/:id',pickCtrl.editName);
-app.delete('api/pick/:id', pickCtrl.deletePlayer);
+app.delete('/api/pick/:id', pickCtrl.deletePlayer);
 
 
 //adding server

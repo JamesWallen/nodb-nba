@@ -13,10 +13,10 @@ class Pick extends Component {
     }
 
     componentDidMount(){
-        this.getPlayer();
+        this.getPlayers();
     }
 
-    getPlayer = () => {
+    getPlayers = () => {
         axios.get('/api/players')
         .then(res => {
             this.setState({players: res.data})
@@ -25,10 +25,10 @@ class Pick extends Component {
     }
 
     render(){
-        const mappedPlayers = this.state.players.map((players, i) => (
+        const mappedPlayers = this.state.players.map((player, i) => (
             <Player
                 key={i}
-                players={players}
+                player={player}
                 pickFn={this.props.pickFn}
                 refreshFn={this.getPlayers}/>
         ))

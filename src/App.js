@@ -13,6 +13,7 @@ class App extends Component {
         this.state = {
             pickPlayer: []
         }
+        this.pickPlayer = this.pickPlayer.bind(this)
         
     }
     componentDidMount(){
@@ -23,8 +24,9 @@ class App extends Component {
         .catch(err => console.log(err));
     }
     
-    pickPlayer(players){
-        axios.post('/api/pick', {players: players})
+    pickPlayer(player){
+        console.log(player)
+        axios.post('/api/pick', player)
         .then(res => {
             this.setState({pickPlayer: res.data})
         })
@@ -36,7 +38,7 @@ class App extends Component {
 
         axios.put(`/api/pick/${id}`, body)
         .then(res => {
-            this.setState({pick: res.data})
+            this.setState({pickPlayer: res.data})
         })
         .catch(err => console.log(err));
     }
@@ -44,7 +46,7 @@ class App extends Component {
     deletePlayer = (id) => {
         axios.delete(`/api/pick/${id}`)
         .then(res => {
-            this.setState({pick: res.data})
+            this.setState({pickPlayer: res.data})
         })
         .catch(err => console.log(err));
     }
@@ -60,7 +62,7 @@ class App extends Component {
                 <Team
                     pickPlayer={this.state.pickPlayer}
                     nameFn={this.editName}
-                    deletePlayer={this.deletePlayer}/>
+                    deleteFn={this.deletePlayer}/>
             </div>
         )
     }

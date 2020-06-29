@@ -33,17 +33,17 @@ class Edit extends Component {
                         <input
                             value={this.state.name}
                             onChange={e => this.handleInput(e.target.value)}/>
-                            <button onClick={() => this.handleEdit(this.props.pokemon.id)}>Submit</button>
+                            <button onClick={() => this.handleEdit(this.props.player.id)}>Submit</button>
                     </div>
                 )
                 : (
                     <div>
-                        <p>{this.props.players.name}</p>
+                        <p>{this.props.player.name}</p>
                         <button onClick={this.handleToggle}>Edit Name</button>
                     </div>
                 )}
                 
-                <button onClick={() => this.props.deleteFn(this.props.pokemon.id)}>Delete</button>
+                <button onClick={() => this.props.deleteFn(this.props.player.id)}>Delete</button>
 
             </div>
         )

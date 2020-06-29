@@ -4,9 +4,10 @@ import React, {Component} from 'react';
 
 class Player extends Component {
     handlePick = () => {
-        const {players} = this.props;
+        console.log(this.props)
+        const {player} = this.props;
         let newPlayer = {
-            name: players.name,
+            name: player.name,
         }
 
         this.props.pickFn(newPlayer);
@@ -16,7 +17,7 @@ class Player extends Component {
     render(){
         return (
             <div onClick={this.handlePick}>
-                <p>{this.props.players.name}</p>
+                <p>{this.props.player.name}</p>
             </div>
         )
     }
